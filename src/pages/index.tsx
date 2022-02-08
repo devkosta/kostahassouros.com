@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { graphql } from "gatsby";
 
-import FadeIn from 'react-fade-in';
+import FadeIn from "react-fade-in";
 
 import BaseLayout from "../components/Layout/BaseLayout";
 import SEO from "../components/SEO";
