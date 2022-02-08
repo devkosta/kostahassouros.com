@@ -47,7 +47,9 @@
 		"prettier": "^2.5.1"
 	},
 	"keywords": [
-		"gatsby"
+		"personal",
+		"portfolio",
+		"developer"
 	],
 	"license": "0BSD",
 	"scripts": {

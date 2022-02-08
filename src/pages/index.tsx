@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import FadeIn from 'react-fade-in';
 
 import BaseLayout from "../components/Layout/BaseLayout";
+import SEO from "../components/SEO";
 import Welcome from "../sections/Welcome";
 import Status from "../sections/Status";
 import Notes from "../sections/Notes";
@@ -18,6 +19,7 @@ interface IProps {
 const Index: FC<IProps> = ({ data }) => {
 	return (
 		<BaseLayout>
+			<SEO title="Kosta Hassouros" />
 			<FadeIn>
 				<Welcome content={data.welcome.edges[0].node} />
 				<Status content={data.status.edges[0].node} />
