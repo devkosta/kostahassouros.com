@@ -1,5 +1,8 @@
+import "@fontsource/inter";
+import "@fontsource/fira-code";
+
 const fonts = {
-	body: "'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif",
+	body: "'Inter', Arial, sans-serif",
 	heading: "inherit",
 };
 
