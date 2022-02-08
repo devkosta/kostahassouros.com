@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
+import Link from "./Link";
 import {
     Flex,
-    Text,
     Box
 } from "@chakra-ui/react";
 import { BsArrowRight } from "react-icons/bs";
@@ -22,27 +22,23 @@ const ListItem: FC<IProps> = ({ title, url, date }) => {
             justifyContent="space-between"
             _hover={{ color: "textMain" }}
         >
-            <Text
-                as="a"
-                href={url}
-                target="_blank"
-            >
+            <Box>
                 <Box
                     as="span"
-                    mr={3}
+                    mr={5}
                     fontFamily="Fira Code"
                     color="textSecond"
                 >
                     {newDate.getFullYear()}
-                </Box>{" "}
-                <Box 
-                    as="span"
+                </Box>
+                <Link
+                    toHref={url}
                     transition="0.13s ease-in-out"
                     _hover={{ ml: 3 }}
                 >
                     {title}
-                </Box>
-            </Text>
+                </Link>
+            </Box>
             <BsArrowRight />
         </Flex>
     );

@@ -7,7 +7,7 @@ interface IProps {
     toHref: string;
 }
 
-const Link: FC<IProps> = ({ children, toHref }) => (
+const Link: FC<IProps & any> = ({ children, toHref, ...props }) => (
     <Box 
         as="a"
         mr={4}
@@ -15,6 +15,7 @@ const Link: FC<IProps> = ({ children, toHref }) => (
         target="_blank"
         transition="0.13s ease-in-out"
         _hover={{ color: "textMain" }}
+        {...props}
     >
         {children}
     </Box> 

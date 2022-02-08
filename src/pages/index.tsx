@@ -8,7 +8,7 @@ import Welcome from "../sections/Welcome";
 import Status from "../sections/Status";
 import Notes from "../sections/Notes";
 import Work from "../sections/Work";
-import WorkInteractive from "../sections/WorkInteractive";
+import WorkDemo from "../sections/WorkDemo";
 import Contact from "../sections/Contact";
 
 interface IProps {
@@ -23,7 +23,7 @@ const Index: FC<IProps> = ({ data }) => {
 				<Status content={data.status.edges[0].node} />
                 <Notes content={data.notes.edges} />
 				<Work content={data.work.edges} />
-				<WorkInteractive />
+				<WorkDemo />
 				<Contact content={data.contact.edges[0].node} />
 			</FadeIn>
 		</BaseLayout>

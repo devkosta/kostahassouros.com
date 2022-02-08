@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import SectionGrid from "../components/Layout/SectionGrid";
+import SectionWithColumns from "../components/Layout/SectionWithColumns";
 import ListItem from "../components/ListItem";
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const Work: FC<IProps> = ({ content }) => (
-    <SectionGrid title="Recent Work">
+    <SectionWithColumns title="Recent Work" colWidth="22%">
         {content.map((work: any) => (
             <ListItem
                 title={work.node.frontmatter.title}
@@ -18,7 +18,7 @@ const Work: FC<IProps> = ({ content }) => (
                 key={uuidv4()}
             />
         ))}
-    </SectionGrid>
+    </SectionWithColumns>
 );
 
 export default Work;

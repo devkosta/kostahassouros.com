@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 
-import Section from "../Layout/Section";
+import Section from "./Section";
 import {
     Flex,
     Box
@@ -9,23 +9,24 @@ import {
 interface IProps {
     children: ReactNode;
     title: string;
+    colWidth: string;
 }
 
-const SectionGrid: FC<IProps> = ({ children, title }) => (
+const SectionWithColumns: FC<IProps> = ({ children, title, colWidth }) => (
     <Section>
         <Flex
             w="100%"
             gap={4}
             flexDirection={{ base: "column", md: "row" }}
         >
-            <Box w={{ base: "100%", md: "22%" }} color="textSecond">
+            <Box w={{ base: "100%", md: colWidth }} color="textSecond">
                 {title} 
             </Box>
-            <Box w={{ base: "100%", md: "78%" }}>
+            <Box w={{ base: "100%", md: "100%" }}>
                 {children}
             </Box>
         </Flex>
     </Section>
 );
 
-export default SectionGrid;
+export default SectionWithColumns;

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import SectionGrid from "../components/Layout/SectionGrid";
+import SectionWithColumns from "../components/Layout/SectionWithColumns";
 import Link from "../components/Link";
 
 interface IProps {
@@ -11,11 +11,11 @@ const Contact: FC<IProps> = ({ content }) => {
     const { frontmatter } = content;
 
     return (
-        <SectionGrid title="Contact">
+        <SectionWithColumns title="Contact" colWidth="22%">
             {frontmatter.contact.map((item: string[]) => (
                 <Link toHref={item[1]} key={item[1]}>{item[0]}</Link>
             ))}
-        </SectionGrid>
+        </SectionWithColumns>
     );
 };
 

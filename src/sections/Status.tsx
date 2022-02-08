@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import SectionGrid from "../components/Layout/SectionGrid";
+import SectionWithColumns from "../components/Layout/SectionWithColumns";
 
 interface IProps {
     content: any;
@@ -10,9 +10,9 @@ const Status: FC<IProps> = ({ content }) => {
     const { frontmatter } = content;
 
     return (
-        <SectionGrid title="Status">
+        <SectionWithColumns title="Status" colWidth="22%">
             {frontmatter.description}
-        </SectionGrid>
+        </SectionWithColumns>
     );
 };
 
