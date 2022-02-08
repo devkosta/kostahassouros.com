@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MarkedText } from "@devkosta/react-text-marker";
 
 import { 
@@ -14,7 +14,7 @@ import { AiOutlineClear } from "react-icons/ai";
 
 const TextMarkerDemo = () => {
     const initialColour = "D6BCFA";
-    const initialMarkedWords = ["Hello, World", "some marked", "text below", "test it"];
+    const initialMarkedWords = ["Hello, World", "some marked", "the text below", "test it"];
     const initialText = "Hello, World - This is some marked text. Edit the text below and test it out. Available on NPM.";
 
     const [colour, setColour] = useState<string>(initialColour);
@@ -31,12 +31,19 @@ const TextMarkerDemo = () => {
     };
 
     const handleWordAdd = () => {
-        setMarkedWordsArr(words => [...words, markedWord]);
+        if (markedWord && text.includes(markedWord)) {
+            setMarkedWordsArr(words => [...words, markedWord]);
+            setMarkedWord("");
+        }
     };
 
     const handleTextEdit = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value);
     };
+
+    console.log(markedWord);
+    console.log(markedWordsArr);
+    console.log(text);
 
     return (
         <VStack
@@ -46,14 +53,13 @@ const TextMarkerDemo = () => {
             justifyContent="space-between"
         >
             <Text
-                w="100%"
                 mb={2}
                 fontSize="xl"
                 noOfLines={3}
             >
                 <MarkedText
                     textToMark={text || "This is available on NPM."}
-                    isCaseSensitive={false}
+                    isCaseSensitive={true}
                     markedWords={markedWordsArr}
                     markerColor={"#" + colour}
                 />
