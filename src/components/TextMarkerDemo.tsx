@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { MarkedText } from "@devkosta/react-text-marker";
 
 import { 
@@ -59,7 +59,7 @@ const TextMarkerDemo = () => {
             >
                 <MarkedText
                     textToMark={text || "This is available on NPM."}
-                    isCaseSensitive={true}
+                    isCaseSensitive={false}
                     markedWords={markedWordsArr}
                     markerColor={"#" + colour}
                 />
@@ -71,7 +71,7 @@ const TextMarkerDemo = () => {
             />
             <HStack spacing={2}>
                 <Input
-                    placeholder="Add a Word"
+                    placeholder="Mark a Word"
                     value={markedWord}
                     onChange={handleWordEdit}
                 />

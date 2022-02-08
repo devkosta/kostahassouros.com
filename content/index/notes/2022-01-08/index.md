@@ -1,5 +1,5 @@
 ---
 title: "Portfolios are Hard"
 url: "#"
-date: "2022-02-01"
+date: "2022-02-08"
 ---
