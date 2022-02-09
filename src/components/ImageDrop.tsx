@@ -29,7 +29,7 @@ const ImageDrop: FC<IProps> = ({ onFileAccepted }) => {
     return (
         <Center
             w="100%"
-            h="20rem"
+            h="20.1rem"
             p={10}
             cursor="pointer"
             borderRadius={10}
