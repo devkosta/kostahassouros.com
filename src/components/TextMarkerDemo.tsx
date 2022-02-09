@@ -81,7 +81,7 @@ const TextMarkerDemo = () => {
                 />
                 <IconButton 
                     aria-label="Clear Words"
-                    icon={<AiOutlineClear />} 
+                    icon={<AiOutlineClear size={20} />} 
                     onClick={() => setMarkedWordsArr([])}
                 />
             </HStack>
