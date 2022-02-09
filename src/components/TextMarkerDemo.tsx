@@ -22,7 +22,6 @@ const TextMarkerDemo = () => {
     const [markedWordsArr, setMarkedWordsArr] = useState<string[]>(initialMarkedWords);
     const [text, setText] = useState<string>(initialText);
 
-    
     const handleColourEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
         setColour(e.target.value);
     };
