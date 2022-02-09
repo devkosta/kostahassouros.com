@@ -49,14 +49,14 @@ const WorkDemoCard: FC<IProps> = ({ children, title, url, info }) => {
                 />
             </Flex>
             <Box>{children}</Box>
-            <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+            <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent maxW="container.sm" overflowY="scroll"> 
-                    <ModalHeader px={4} py={3}>{title}</ModalHeader>
-                    <ModalBody px={4}>
+                    <ModalHeader p={4} fontFamily="inter">{title}</ModalHeader>
+                    <ModalBody p={4}>
                         <MDXChakra>{info}</MDXChakra>
                     </ModalBody>
-                    <ModalFooter px={4} py={3}>
+                    <ModalFooter p={4}>
                         <Button colorScheme='blue' onClick={onClose}>Close</Button>
                     </ModalFooter>
                 </ModalContent>
