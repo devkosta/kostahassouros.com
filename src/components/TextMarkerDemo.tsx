@@ -21,6 +21,7 @@ const TextMarkerDemo = () => {
     const [markedWord, setMarkedWord] = useState<string>("");
     const [markedWordsArr, setMarkedWordsArr] = useState<string[]>(initialMarkedWords);
     const [text, setText] = useState<string>(initialText);
+
     
     const handleColourEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
         setColour(e.target.value);
@@ -41,10 +42,6 @@ const TextMarkerDemo = () => {
         setText(e.target.value);
     };
 
-    console.log(markedWord);
-    console.log(markedWordsArr);
-    console.log(text);
-
     return (
         <VStack
             h="100%"
@@ -53,6 +50,7 @@ const TextMarkerDemo = () => {
             justifyContent="space-between"
         >
             <Text
+                maxW={{ base: "88vw", md: "300px" }}
                 mb={2}
                 fontSize="xl"
                 noOfLines={3}
@@ -69,14 +67,14 @@ const TextMarkerDemo = () => {
                 value={colour}
                 onChange={handleColourEdit}
             />
-            <HStack spacing={2}>
+            <HStack w="100%" spacing={2}>
                 <Input
                     placeholder="Mark a Word"
                     value={markedWord}
                     onChange={handleWordEdit}
                 />
                 <IconButton 
-                    colorScheme='blue'
+                    colorScheme="blue"
                     aria-label="Add Word"
                     icon={<HiPlus />} 
                     onClick={handleWordAdd}
@@ -88,6 +86,7 @@ const TextMarkerDemo = () => {
                 />
             </HStack>
             <Textarea
+                maxW={{ base: "88vw", md: "300px" }}
                 h="8rem"
                 lineHeight={1.65}
                 placeholder="Text to Mark"

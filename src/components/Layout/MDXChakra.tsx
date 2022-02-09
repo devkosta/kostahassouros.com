@@ -25,6 +25,7 @@ const mdComponents = {
     a: (rest: any) => (
         <Link
             as="a"
+            color="blue.400"
             {...rest}
         />
     ),
