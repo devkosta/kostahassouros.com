@@ -51,7 +51,7 @@ const WorkDemoCard: FC<IProps> = ({ children, title, url, info }) => {
             <Box>{children}</Box>
             <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent maxW="container.sm" overflowY="scroll"> 
+                <ModalContent maxW="container.sm"> 
                     <ModalHeader p={4} fontFamily="inter">{title}</ModalHeader>
                     <ModalBody p={4}>
                         <MDXChakra>{info}</MDXChakra>
