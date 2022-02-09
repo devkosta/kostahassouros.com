@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Section from "../components/Layout/Section";
 import WorkDemoCard from "../components/WorkDemoCard";
 import TextMarkerDemo from "../components/TextMarkerDemo";
+import PerceptualHashingDemo from "../components/PerceptualHashingDemo";
 import { Flex } from "@chakra-ui/react";
 
 const WorkInteractive = () => {
@@ -46,7 +47,9 @@ const WorkInteractive = () => {
                     title={cardTwo.frontmatter.title}
                     url={cardOne.frontmatter.url}
                     info={cardTwo.body}
-                />
+                >
+                    <PerceptualHashingDemo />
+                </WorkDemoCard>
             </Flex>
         </Section>
     );
