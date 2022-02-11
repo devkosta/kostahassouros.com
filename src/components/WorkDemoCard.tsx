@@ -1,18 +1,12 @@
 import React, { FC, ReactNode } from "react";
 
 import Link from "./Link";
+import ModalItem from "./ModalItem";
 import MDXChakra from "./Layout/MDXChakra";
 import {
     Box,
     Flex,
     IconButton,
-    Button,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
     useDisclosure
 } from "@chakra-ui/react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
@@ -49,18 +43,9 @@ const WorkDemoCard: FC<IProps> = ({ children, title, url, info }) => {
                 />
             </Flex>
             <Box>{children}</Box>
-            <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent maxW="container.sm"> 
-                    <ModalHeader p={4} fontFamily="inter">{title}</ModalHeader>
-                    <ModalBody p={4}>
-                        <MDXChakra>{info}</MDXChakra>
-                    </ModalBody>
-                    <ModalFooter p={4}>
-                        <Button colorScheme='blue' onClick={onClose}>Close</Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
+            <ModalItem title={title} isOpen={isOpen} onClose={onClose}>
+                <MDXChakra>{info}</MDXChakra>
+            </ModalItem>
         </Box>
     );
 };

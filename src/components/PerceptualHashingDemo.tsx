@@ -5,6 +5,7 @@ import { FileWithPath } from "react-dropzone";
 import { dataToHash, hammDist } from "../utils/perceptualHash";
 
 import ImageDrop from "./ImageDrop";
+import ModalItem from "./ModalItem";
 import {
     VStack,
     HStack,
@@ -14,12 +15,6 @@ import {
     IconButton,
     Button,
     Spinner,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
     useDisclosure,
     useToast
 } from "@chakra-ui/react";
@@ -29,7 +24,7 @@ import { AiOutlineClear } from "react-icons/ai";
 const PerceptualHashingDemo = () => {
     const [currentFiles, setCurrentFiles] = useState<FileWithPath[]>([]);
     const [hashes, setHashes] = useState<string[]>([]);
-    const [loading, setLoading] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -37,10 +32,7 @@ const PerceptualHashingDemo = () => {
 
     const importFile = (files: FileWithPath[]) => {
         for (let i = 0; i < files.length; i++) {
-            if (
-                files[i].type !== "image/png" &&
-                files[i].type !== "image/jpeg"
-            ) {
+            if (files[i].type !== "image/png" && files[i].type !== "image/jpeg") {
                 toast({
                     description: `File type ${files[i].type} not accepted. Please upload either a PNG or JPEG file.`,
                     status: "error",
@@ -74,7 +66,7 @@ const PerceptualHashingDemo = () => {
                 const formData = new FormData();
                 formData.append("image", currentFiles[i], currentFiles[i].name);
                 
-                setLoading(true);
+                setIsLoading(true);
 
                 await axios.post("https://devkosta-image-match.herokuapp.com/api/upload", formData)
                     .then((res) => {
@@ -86,7 +78,7 @@ const PerceptualHashingDemo = () => {
             }
         }
 
-        setLoading(false);
+        setIsLoading(false);
         onOpen();
     };
 
@@ -147,7 +139,7 @@ const PerceptualHashingDemo = () => {
                             mr={2}
                             aria-label="Start"
                             colorScheme="blue"
-                            icon={loading ? <Spinner /> : <BsArrowRightShort size={26} />}
+                            icon={isLoading ? <Spinner /> : <BsArrowRightShort size={26} />}
                             onClick={handleButtonClick}
                         />
                         <IconButton
@@ -161,18 +153,9 @@ const PerceptualHashingDemo = () => {
                     </Box> 
                 </Flex>
             </HStack>
-            <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent maxW="container.sm"> 
-                    <ModalHeader px={4} py={3} fontFamily="inter">Results</ModalHeader>
-                    <ModalBody px={4}>
-                        {handleResults()}
-                    </ModalBody>
-                    <ModalFooter px={4} py={3}>
-                        <Button colorScheme='blue' onClick={onClose}>Close</Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
+            <ModalItem title="Results" isOpen={isOpen} onClose={onClose}>
+                {handleResults()}
+            </ModalItem>
         </VStack>
     );
 };

@@ -13,20 +13,20 @@ interface IProps {
 }
 
 const mdComponents = {
-    ul: (rest: any) => (
+    ul: (props: any) => (
         <UnorderedList
             px={3}
             alignSelf="center"
             fontSize="xl"
-            {...rest}
+            {...props}
         />
     ),
-    li: (rest: any) => <ListItem {...rest} />,
-    a: (rest: any) => (
+    li: (props: any) => <ListItem {...props} />,
+    a: (props: any) => (
         <Link
             as="a"
             color="blue.400"
-            {...rest}
+            {...props}
         />
     ),
 };
