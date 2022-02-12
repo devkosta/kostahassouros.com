@@ -5,7 +5,7 @@ import Section from "../components/Layout/Section";
 
 import { Text } from "@chakra-ui/react";
 
-const NotFound = () => (
+const NotFoundPage = () => (
     <BaseLayout>
         <Section>
             <Text fontSize="2xl">404! Not much to see here...</Text>
@@ -13,4 +13,4 @@ const NotFound = () => (
     </BaseLayout>
 );
 
-export default NotFound;
+export default NotFoundPage;
