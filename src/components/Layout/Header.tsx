@@ -14,7 +14,7 @@ const Header = () => {
             alignItems="center"
             justifyContent="space-between"
         >
-            <Link toHref="#">Kosta Hassouros</Link>
+            <Link toHref="/">Kosta Hassouros</Link>
             <Box>{new Date().getFullYear()}</Box> 
         </Flex>
     );
