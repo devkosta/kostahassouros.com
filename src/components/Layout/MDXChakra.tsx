@@ -26,6 +26,7 @@ const mdComponents = {
         <Link
             as="a"
             color="blue.400"
+            target="_blank"
             {...props}
         />
     ),

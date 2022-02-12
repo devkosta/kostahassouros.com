@@ -32,6 +32,7 @@ const ListItem: FC<IProps> = ({ title, url, date }) => {
                     {newDate.getFullYear()}
                 </Box>
                 <Link
+                    target="_blank"
                     toHref={url}
                     transition="0.13s ease-in-out"
                     _hover={{ ml: 3 }}

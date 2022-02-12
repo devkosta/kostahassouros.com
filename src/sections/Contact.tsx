@@ -13,7 +13,7 @@ const Contact: FC<IProps> = ({ content }) => {
     return (
         <SectionWithColumns title="Contact" colWidth="22%">
             {frontmatter.contact.map((item: string[]) => (
-                <Link toHref={item[1]} key={item[1]}>{item[0]}</Link>
+                <Link target="_blank" toHref={item[1]} key={item[1]}>{item[0]}</Link>
             ))}
         </SectionWithColumns>
     );

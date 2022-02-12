@@ -35,7 +35,7 @@ const WorkDemoCard: FC<IProps> = ({ children, title, url, info }) => {
                 alignItems="center"
                 justifyContent="space-between"
             >
-                <Link toHref={url}>{title}</Link>
+                <Link target="_blank" toHref={url}>{title}</Link>
                 <IconButton
                     aria-label="Info"
                     icon={<AiOutlineInfoCircle size={20} />}

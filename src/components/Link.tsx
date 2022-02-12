@@ -5,14 +5,15 @@ import { Box } from "@chakra-ui/react";
 interface IProps {
     children: ReactNode;
     toHref: string;
+    target?: string;
 }
 
-const Link: FC<IProps & any> = ({ children, toHref, ...props }) => (
+const Link: FC<IProps & any> = ({ children, target="", toHref, ...props }) => (
     <Box 
         as="a"
         mr={4}
         href={toHref}
-        target="_blank"
+        target={target}
         transition="0.13s ease-in-out"
         _hover={{ color: "textMain" }}
         {...props}

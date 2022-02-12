@@ -12,7 +12,7 @@ const NotFoundPage = () => (
     <BaseLayout>
 		<FadeIn>
             <Section>
-                <Text fontSize="2xl">404! Not much to see here... Go <Link toHref="/" color="#6666FF">Home!</Link></Text>
+                <Text fontSize="2xl">404! Not much to see here... Go <Link toHref="/" color="blue">Home!</Link></Text>
             </Section>
         </FadeIn>
     </BaseLayout>
