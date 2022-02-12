@@ -102,7 +102,7 @@ const PerceptualHashingDemo = () => {
             resultStr = "These images are similar, but there are likely some differences.";
         }
         else if (result > 5 && result <= 10) {
-            resultStr = "These images could be similar.";
+            resultStr = "These images could be similar, but likely not.";
         }
         else if (result > 10 && result <= 16) {
             resultStr = "These images are likely not the same.";
