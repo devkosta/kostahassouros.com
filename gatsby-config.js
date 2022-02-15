@@ -54,7 +54,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-plausible`,
 			options: {
-				domain: `kostahassouros.netlify.app`,
+				domain: `kostahassouros.com`,
 			},
 		},
 	],
