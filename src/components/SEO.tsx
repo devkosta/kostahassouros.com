@@ -70,7 +70,9 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
 				},
 			// @ts-ignore
 			].concat(meta)}
-		/>
+		>
+			<script defer data-domain="kostahassouros.com" src="https://plausible.io/js/plausible.js"></script>
+		</Helmet>
 	);
 };
 
