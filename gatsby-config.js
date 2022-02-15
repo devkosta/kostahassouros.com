@@ -50,6 +50,12 @@ module.exports = {
 				name: `content`,
 				path: `${__dirname}/content`,
 			},
-		}
+		},
+		{
+			resolve: `gatsby-plugin-plausible`,
+			options: {
+				domain: `kostahassouros.com`,
+			},
+		},
 	],
 };
