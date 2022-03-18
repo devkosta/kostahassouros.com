@@ -4,4 +4,4 @@ The first iteration of [kostahassouros.com](https://kostahassouros.com/) built w
 
 ## License
 
-MIT © [DevKosta](https://github.com/DevKosta)
+MIT © [devkosta](https://github.com/devkosta)
